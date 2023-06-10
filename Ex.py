@@ -1,137 +1,18 @@
-[
+import json
 
-	{		"id": "0001",
+file=open('ex5.json')
 
-		"type": "donut",
+ex5=json.load(file)
 
-		"name": "Cake",
+for donut in ex5:
 
-		"ppu": 0.55,
+    if donut['name']=='Old Fashioned':
 
-		"batters":
+        donut['batters']['batter'].append({"id":"1003","type":"Coffee"})
 
-			{
+with open('ex5.json','w') as file:
 
-				"batter":
+    json.dump(ex5,file,indent=4)
 
-					[
-
-						{ "id": "1001", "type": "Regular" },
-
-						{ "id": "1002", "type": "Chocolate" },
-
-						{ "id": "1003", "type": "Blueberry" },
-
-						{ "id": "1004", "type": "Devil's Food" }
-
-					]
-
-			},
-
-		"topping":
-
-			[
-
-				{ "id": "5001", "type": "None" },
-
-				{ "id": "5002", "type": "Glazed" },
-
-				{ "id": "5005", "type": "Sugar" },
-
-				{ "id": "5007", "type": "Powdered Sugar" },
-
-				{ "id": "5006", "type": "Chocolate with Sprinkles" },
-
-				{ "id": "5003", "type": "Chocolate" },
-
-				{ "id": "5004", "type": "Maple" }
-
-			]
-
-	},
-
-	{
-
-		"id": "0002",
-
-		"type": "donut",
-
-		"name": "Raised",
-
-		"ppu": 0.55,
-
-		"batters":
-
-			{
-
-				"batter":
-
-					[
-
-						{ "id": "1001", "type": "Regular" }
-
-					]
-
-			},
-
-		"topping":
-
-			[
-
-				{ "id": "5001", "type": "None" },
-
-				{ "id": "5002", "type": "Glazed" },
-
-				{ "id": "5005", "type": "Sugar" },
-
-				{ "id": "5003", "type": "Chocolate" },
-
-				{ "id": "5004", "type": "Maple" }
-
-			]
-
-	},
-
-	{
-
-		"id": "0003",
-
-		"type": "donut",
-
-		"name": "Old Fashioned",
-
-		"ppu": 0.55,
-
-		"batters":
-
-			{
-
-				"batter":
-
-					[
-
-						{ "id": "1001", "type": "Regular" },
-
-						{ "id": "1002", "type": "Chocolate" }
-
-					]
-
-			},
-
-		"topping":
-
-			[
-
-				{ "id": "5001", "type": "None" },
-
-				{ "id": "5002", "type": "Glazed" },
-
-				{ "id": "5003", "type": "Chocolate" },
-
-				{ "id": "5004", "type": "Maple" }
-
-			]
-
-	}
-
-]
+			
+			
